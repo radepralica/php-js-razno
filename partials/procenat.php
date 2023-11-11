@@ -1,7 +1,7 @@
-<?php require_once "functions/function.php"; ?>
+<?php require "functions/function.php"; ?>
 
 <?php
-$kolProc = $kolUkupno = $procKol = $procUkupno = '';
+// $kolProc = $kolUkupno = $procKol = $procUkupno = '';
 if (isset($_POST['calcKol'])) {
     $kolProc = filter_var($_POST['kolProc'], FILTER_SANITIZE_NUMBER_INT);
     $kolUkupno = filter_var($_POST['kolUkupno'], FILTER_SANITIZE_NUMBER_INT);
@@ -10,20 +10,20 @@ if (isset($_POST['calcKol'])) {
 
     $errors = ['kolproc' => '', 'kolukupno' => '', 'prockol' => '', 'procukupno' => ''];
 
-    if (empty($_POST['kolProc'])) {
+    if (empty($kolProc)) {
         $errors['kolproc'] = 'Upišite procenat';
     }
-    if (empty($_POST['kolUkupno'])) {
+    if (empty($kolUkupno)) {
         $errors['kolukupno'] = 'Upišite količinu';
     }
 
     if (!array_filter($errors)) {
         $kolRez = calcKol($kolUkupno, $kolProc);
-        header("Location:index.php#procenat");
+        
     }
 
 
-    // header("Location:index.php");
+   
 
 
 
@@ -48,7 +48,7 @@ if (isset($_POST['calcProc'])) {
     if (!array_filter($errors)) {
 
         $procRez = calcProc($procUkupno, $procKol);
-        header("Location:index.php#procenat");
+       
     }
    
 }
@@ -61,6 +61,8 @@ if (isset($_POST['calcProc'])) {
 
 ?>
 
+
+<?php echo $_POST['kolproc'];?>
 
 <form action="<?php echo 'index.php'; ?>" method="POST">
     <br><br>

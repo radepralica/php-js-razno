@@ -48,7 +48,7 @@ if (isset($_POST['diffDate'])) {
 }
 
 ?>
-<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+<form action="<?php echo 'razlikedatuma.php#datumi'; ?>" method="post">
     <div class="container ">
         <div style="background: lightskyblue;" class="row  rounded   mb-5">
 
@@ -56,7 +56,7 @@ if (isset($_POST['diffDate'])) {
                 <br><br>
                 <h2 class="text-center">Godine mjeseci</h2>
                 <br><br>
-
+<section id="datumi"></section>
                 <label class="form-label" for="">Godine</label>
                 <input class="form-control bold" name="godine" value="" min="0" type="number"><br>
                 <label class="form-label" for="">Mjeseci</label>
@@ -65,6 +65,7 @@ if (isset($_POST['diffDate'])) {
                 <br>
                 <hr>
                 <h3 class="text-center">Rezultat</h3>
+                
                 <label class="form-label" for="">Godine/Mjeseci</label>
                 <input class="form-control bold" name="rezGodineMjes" type="text" value="<?php echo "$gd   Godina i   $mj   Mjeseca(i)" ?>">
                 <label class="form-label" for="">Mjeseci</label>

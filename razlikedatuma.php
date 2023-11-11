@@ -1,7 +1,7 @@
 <?php require "partials/header.php";?>
 
 <title>Razlike Datuma</title>
-<link rel="shortcut icon" href="cal.png">
+<link rel="shortcut icon" href="icons/cal.png">
 </head>
 
 <body >

@@ -1,7 +1,7 @@
 <?php require "partials/header.php"; ?>
 
 <title>Procenat</title>
-<link rel="shortcut icon" href="perc.jpg">
+<link rel="shortcut icon" href="icons/perc.jpg">
 </head>
 
 <body>

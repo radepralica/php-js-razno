@@ -1,0 +1,6 @@
+1) Riješiti da forma ostane gdje se desio klik +
+2) Probati riješiti prosjek sa SESSION         -
+
+
+3)Staviti u folder ikone i linkovati ih kao i style fajlove +
+4)Staviti u folder style fajlove                            +
