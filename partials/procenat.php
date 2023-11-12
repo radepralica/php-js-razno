@@ -19,15 +19,7 @@ if (isset($_POST['calcKol'])) {
 
     if (!array_filter($errors)) {
         $kolRez = calcKol($kolUkupno, $kolProc);
-        
     }
-
-
-   
-
-
-
-
 }
 
 if (isset($_POST['calcProc'])) {
@@ -48,9 +40,7 @@ if (isset($_POST['calcProc'])) {
     if (!array_filter($errors)) {
 
         $procRez = calcProc($procUkupno, $procKol);
-       
     }
-   
 }
 
 
@@ -62,9 +52,14 @@ if (isset($_POST['calcProc'])) {
 ?>
 
 
-<?php echo $_POST['kolproc'];?>
+
+
+
+<?php echo $_POST['kolproc']; ?>
 
 <form action="<?php echo 'index.php'; ?>" method="POST">
+
+
     <br><br>
     <section id="procenat"></section>
     <div class="shadow p-3 mb-5 bg-body rounded container ">
@@ -76,7 +71,7 @@ if (isset($_POST['calcProc'])) {
 
                 <input class="form-control" type="number" min="1" name="kolProc" placeholder="Upiši procenat" value="<?php echo $kolProc; ?>"><br>
                 <?php if ($errors['kolproc']) : ?>
-                    <div style="height:2.2em;"  class="alert alert-sm alert-danger text-center fw-bold  alert-dismissible fade show" role="alert">
+                    <div style="height:2.2em;" class="alert alert-sm alert-danger text-center fw-bold  alert-dismissible fade show" role="alert">
                         <p style="margin-top:-10px"><?php echo $errors['kolproc'] ?></p>
                         <button style="margin-top:-10px" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
@@ -84,7 +79,7 @@ if (isset($_POST['calcProc'])) {
                 <input class="form-control" type="number" min="1" name="kolUkupno" placeholder="Upiši količinu" value="<?php echo $kolUkupno; ?>"><br>
 
                 <?php if ($errors['kolukupno']) : ?>
-                    <div style="height:2.2em;"  class="alert alert-sm alert-danger text-center fw-bold  alert-dismissible fade show" role="alert">
+                    <div style="height:2.2em;" class="alert alert-sm alert-danger text-center fw-bold  alert-dismissible fade show" role="alert">
                         <p style="margin-top:-10px"><?php echo $errors['kolukupno'] ?></p>
                         <button style="margin-top:-10px" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
@@ -104,14 +99,14 @@ if (isset($_POST['calcProc'])) {
                 <h2 class="text-light text-center">Računanje Procenta</h2>
                 <input class="form-control" type="number" name="procUkupno" min="1" placeholder="Upiši ukupno" value="<?php echo $procUkupno ?>"><br>
                 <?php if ($errors['procukupno']) : ?>
-                    <div style="height:2.2em;"  class="alert alert-sm alert-danger text-center fw-bold  alert-dismissible fade show" role="alert">
+                    <div style="height:2.2em;" class="alert alert-sm alert-danger text-center fw-bold  alert-dismissible fade show" role="alert">
                         <p style="margin-top:-10px"><?php echo $errors['procukupno'] ?></p>
                         <button style="margin-top:-10px" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
                 <?php endif ?>
                 <input class="form-control" type="number" name="procKol" min="1" placeholder="Upiši količinu" value="<?php echo $procKol ?>"><br>
                 <?php if ($errors['prockol']) : ?>
-                    <div style="height:2.2em;"  class="alert alert-sm alert-danger text-center fw-bold  alert-dismissible fade show" role="alert">
+                    <div style="height:2.2em;" class="alert alert-sm alert-danger text-center fw-bold  alert-dismissible fade show" role="alert">
                         <p style="margin-top:-10px"><?php echo $errors['prockol'] ?></p>
                         <button style="margin-top:-10px" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>

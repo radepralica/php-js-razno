@@ -23,7 +23,7 @@ function calculateAverage() {
 btnCalc.addEventListener('click', function (e) {
   e.preventDefault();
   if (document.getElementById('upis').value === '') {
-    Swal.fire('Greška', 'Nema podataka za izračun!!!');
+    Swal.fire('Greška', 'Nema podataka za izračun trenutno!!!');
     upis.textContent = '';
     return;
   }

@@ -3,4 +3,4 @@
 
 
 3)Staviti u folder ikone i linkovati ih kao i style fajlove +
-4)Staviti u folder style fajlove                            +
+4)Staviti u folder style fajlove                            
