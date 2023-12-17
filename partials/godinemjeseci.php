@@ -1,3 +1,4 @@
+
 <?php
 
 if (isset($_POST['calcGodMjes'])) {
@@ -47,6 +48,20 @@ if (isset($_POST['diffDate'])) {
     $dana = $diff->format("%d");
 }
 
+if(isset($_POST['convertDays'])){
+$inpDays=$_POST['inpDays'];
+$years=$_POST['resYears'];
+$months=$_POST['resMonths'];
+$days=$_POST['resDays'];
+
+$years = floor($inpDays / 365);
+    $months = floor(($inpDays - ($years * 365))/30.5);
+    $days = floor($inpDays - ($years * 365) - ($months * 30.5));
+
+}
+
+
+
 ?>
 <form action="<?php echo 'razlikedatuma.php#datumi'; ?>" method="post">
     <div class="container ">
@@ -60,9 +75,9 @@ if (isset($_POST['diffDate'])) {
                 <label class="form-label" for="">Godine</label>
                 <input class="form-control bold" name="godine" value="" min="0" type="number"><br>
                 <label class="form-label" for="">Mjeseci</label>
-                <input class="form-control bold" value="" min="0" name="mjeseci" type="number"><br>
-                <button class="btn btn-lg btn-danger offset-4" name="calcGodMjes" type="submit">Izračunaj</button>
-                <br>
+                <input class="form-control bold" value="" min="0" name="mjeseci" type="number"><br><br>
+                <button class="btn btn-lg btn-danger mt-3 offset-4" name="calcGodMjes" type="submit">Izračunaj</button>
+                <br><br>
                 <hr>
                 <h3 class="text-center">Rezultat</h3>
                 
@@ -132,7 +147,49 @@ if (isset($_POST['diffDate'])) {
     </div>
 </div>
 <br><br>
-<button class="btn btn-lg btn-danger offset-5" name="diffDate">Izračunaj</button>
+<button class="btn btn-lg btn-danger offset-5" name="diffDate">Izračunaj</button><br><br>
+<hr>
+<!-- convert days to years and months -->
+
+<div class="container">
+    <div class="row">
+        <div class="col-9 offset-2">
+        <label class="mt-4" for="">Dani</label>
+<input type="text" name="inpDays" class="form-control w-100" value="<?php echo empty($impDays) ? 0 : $impDays ; ?>">
+
+        </div>
+
+
+    </div>
+</div>
+
+<div class="container">
+    <div class="row offset-2">
+        <div class="col-4">
+        <label for="" class="form-label"><strong>Godina</strong></label>
+                <input style="width:4rem;height:4rem;font-size:1.3rem;font-weight:bold" type=" text" name="resYears" class="form-control  text-center" value="<?php echo $years;?>">
+
+        </div>
+
+        <div class="col-4">
+        <label  for="" class="form-label "><strong>Mjeseci</strong></label>
+                <input style="width:4rem;height:4rem;font-size:1.3rem;font-weight:bold" type=" text" name="resMonths" class="form-control  text-center" value="<?php echo $months;?>">
+        </div>
+
+        <div class="col-4">
+        <label for="" class="form-label offset-1 "><strong>Dana</strong></label>
+            <input style="width:4rem;height:4rem;font-size:1.3rem;font-weight:bold" type="text" name="resDays" class="form-control text-center" value="<?php echo $days;?>"><br>
+        </div>
+        
+        
+    </div>
+    <button name="convertDays" class="btn btn-lg w-50 btn-success offset-4 container-sm">Pretvori dane</button>  
+</div>
+<br>
+
             </div>
+        </div>
+
+        <div class="container">
         </div>
 </form>
